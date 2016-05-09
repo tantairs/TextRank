@@ -32,45 +32,45 @@ public class Word2VEC {
 		//
 
 		//
-        List<String> list = new ArrayList<>();
-        list.add("你");
-        list.add("是");
-        list.add("什么");
-//        list.add("星座");
-        List<String> list2 = new ArrayList<>();
-        list2.add("你");
-        list2.add("的");
-        list2.add("生日");
-//        list2.add("是");
-//        list2.add("哪天");
-        List<String> list3 = new ArrayList<>();
-        list3.add("你");
-        list3.add("的");
-        list3.add("生日");
-        list3.add("是");
-//        list3.add("哪天");
-//		String str = "爱情";
-//		long start = System.currentTimeMillis();
-//		for (int i = 0; i < 100; i++) {
-        float[] a = vec.getVector((ArrayList)list);
-        float[] aa = a.clone();
+//        List<String> list = new ArrayList<>();
+//        list.add("你");
+//        list.add("是");
+//        list.add("什么");
+////        list.add("星座");
+//        List<String> list2 = new ArrayList<>();
+//        list2.add("你");
+//        list2.add("的");
+//        list2.add("生日");
+////        list2.add("是");
+////        list2.add("哪天");
+//        List<String> list3 = new ArrayList<>();
+//        list3.add("你");
+//        list3.add("的");
+//        list3.add("生日");
+//        list3.add("是");
+////        list3.add("哪天");
+////		String str = "爱情";
+////		long start = System.currentTimeMillis();
+////		for (int i = 0; i < 100; i++) {
+//        float[] a = vec.getVector((ArrayList)list);
+//        float[] aa = a.clone();
 //        for(int i = 0; i < a.length; i++){
 //            System.out.println(aa[i]);
 //        }
-        float[] b = vec.getVector((ArrayList)list2);
-        float[] bb = b.clone();
-        for(int i = 0; i < a.length; i++){
-            System.out.println(aa[i] + " : "+bb[i]);
-        }
-        System.out.println("---------------------");
-        float[] c = vec.getWordVector("哪天");
+//        float[] b = vec.getVector((ArrayList)list2);
+//        float[] bb = b.clone();
 //        for(int i = 0; i < a.length; i++){
-//            System.out.println(c[i]);
+//            System.out.println(aa[i] + " : "+bb[i]);
 //        }
         System.out.println("---------------------");
-        float[] a1 = vec.getVector((ArrayList)list);
-        float[] b1 = vec.getVector((ArrayList)list3);
-        System.out.println("---------------------");
+//        float[] c = vec.getWordVector("哪天");
+////        for(int i = 0; i < a.length; i++){
+////            System.out.println(c[i]);
+////        }
+//        System.out.println("---------------------");
+        float[] a1 = vec.getWordVector("生日");
+//        float[] b1 = vec.getVector((ArrayList)l3);
+        System.out.println(a1.length);
 //        for(int i = 0; i < a.length; i++){
 //            System.out.println(a1[i] + " : "+ b[i]+" : " +b1[i]);
 //        }
@@ -149,6 +149,7 @@ public class Word2VEC {
 	 * @throws java.io.IOException
 	 */
 	public void loadJavaModel(String path) throws IOException {
+        System.out.println("加载中---------");
 		try (DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))) {
 			words = dis.readInt();
 			size = dis.readInt();

@@ -1,6 +1,7 @@
 package com.word2vect.util;
 
-import word2vectdomain.Word2VEC;
+
+import com.Word2VEC;
 
 import java.io.IOException;
 import java.util.*;

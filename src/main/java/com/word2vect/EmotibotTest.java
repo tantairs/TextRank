@@ -327,13 +327,32 @@ public class EmotibotTest {
 
     /**
      * 判断一个输入的句子是否是对小影的个人信息进行提问并需要回答的.
-     *
+     * rule base
      * @param str
      * @return
      */
     public boolean doJudgeBasicSentence(String str) {
-        //这里逻辑判断有问题,需要更改
-        if (str.startsWith("你") || str.startsWith("所以你") || str.startsWith("那你") || str.startsWith("难道你"))
+        //这里逻辑判断有问题,需要更改.
+        //这里肯定不能用你为开头来做拦截.
+        /**
+         * 添加新的过滤规则
+         * 1.(固定句式)
+         * "你会" "你不会" "你有" "你害怕" "你喜欢" "你讨厌" "你可以" "你需要" "你的"
+         *
+         *
+         * 2.(相关关键词)
+         * "你能 + 无人机 + 味 + 动物 + 未来 + 英语+ 分辨 + "
+         *
+         * 3.(特别的)
+         * "你...有" "你...衣服"
+         *
+         * ?.(疑问)
+         * 你是....哪国+ 哪里+机器+男+女+性别+星座+物种+谁
+         */
+        if(str.startsWith(" ")){
+            return true;
+        }
+        if (str.startsWith("所以你") || str.startsWith("那你") || str.startsWith("难道你"))
             return true;
         if (str.contains("你") && str.contains("会")) {
             return true;

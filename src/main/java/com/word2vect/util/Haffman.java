@@ -1,7 +1,7 @@
 package com.word2vect.util;
 
-import com.hankcs.textrank.HiddenNeuron;
-import org.ansj.word2vectdomain.Neuron;
+import com.word2vect.domain.HiddenNeuron;
+import com.word2vect.domain.Neuron;
 
 import java.util.Collection;
 import java.util.TreeSet;
